@@ -1,45 +1,42 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-class App extends React.Component{
-  
-  constructor(props){
-    super(props);
-  }
+function App() {
 
-  Login(){
-      const [email, setEmail] = useState("");
-      const [senha, setSenha] = useState("");
-      const [mensagem, setMensagem] = useState("");
-  }
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [mensagem, setMensagem] = useState("");
 
-  verificar(){
-    if (email === "eduardo.lino@pucpr.br" && senha === "123456"){
+  function verificar() {
+    if (email === "eduardo.lino@pucpr.br" && senha === "123456") {
       setMensagem("Acessado com sucesso!");
     }else{
-      setMensagem("E-mail ou senha invalidos.")
+      setMensagem("E-mail ou senha incorretos.");
     }
   }
 
-  render() {
-    return (
+  return (
+    <div>
+      <h2>Login</h2>
+
       <div>
-        <h1>Login</h1>
-
-        <div>
-          <input type="email" placeholder="E-mail" value={email}
-          onChange={(e) => setEmail(e.target.value)}></input>
-        </div>
-
-        <div>
-          <input></input>
-        </div>
-
-        <div>
-          <button onClick={this.verificar}>Acessar</button>
-        </div>
+        <input type="email" placeholder="E-mail" value={email}
+        onChange={(e) => setEmail(e.target.value)}/>
       </div>
-    );
-  }
+
+      <div>
+        <input type="password" placeholder="Senha" value={senha}
+        onChange={(e) => setSenha(e.target.value)}/>
+      </div>
+
+      <div>
+        <button onClick={verificar}>Acessar</button>
+      </div>
+
+      <div>
+        <label>{mensagem}</label>
+      </div>
+    </div>
+  );
 }
 
 export default App;
