@@ -1,26 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. If you can see this added text,
-          that would mean doing it this way just works.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  
+  constructor(props){
+    super(props);
+  }
+
+  Login(){
+      const [email, setEmail] = useState("");
+      const [senha, setSenha] = useState("");
+      const [mensagem, setMensagem] = useState("");
+  }
+
+  verificar(){
+    if (email === "eduardo.lino@pucpr.br" && senha === "123456"){
+      setMensagem("Acessado com sucesso!");
+    }else{
+      setMensagem("E-mail ou senha invalidos.")
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Login</h1>
+
+        <div>
+          <input type="email" placeholder="E-mail" value={email}
+          onChange={(e) => setEmail(e.target.value)}></input>
+        </div>
+
+        <div>
+          <input></input>
+        </div>
+
+        <div>
+          <button onClick={this.verificar}>Acessar</button>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
