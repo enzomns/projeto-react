@@ -1,11 +1,8 @@
 name: Continuous Integration
-on: 
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  Build:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
