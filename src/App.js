@@ -2,6 +2,13 @@ import React, {useState} from "react";
 
 function App() {
 
+  // Teste CI react
+  test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+  });
+  
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [mensagem, setMensagem] = useState("");
