@@ -1,0 +1,4 @@
+name: Continuous Delivery
+on: [push]
+
+jobs: 
