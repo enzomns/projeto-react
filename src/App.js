@@ -1,10 +1,16 @@
 import React, {useState} from "react";
 import { render, screen } from '@testing-library/react';
 
-// Teste CI react
+// Inicio teste CI react
 test('renders app without crashing', () => {
 render(<App />);
 });
+
+test('shows login on the page', () => {
+  render(<App />);
+  expect(screen.getByText(/login/i)).toBeInTheDocument();
+});
+// Fim teste CI react
 
 function App() {
 
