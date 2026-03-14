@@ -1,4 +1,10 @@
 import React, {useState} from "react";
+import { render, screen } from '@testing-library/react';
+
+// Teste CI react
+test('renders app without crashing', () => {
+render(<App />);
+});
 
 function App() {
 
