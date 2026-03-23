@@ -53,6 +53,6 @@ jobs:
           curl -H "Content-Type: application/json" \
           -X POST \
           -d "{
-            \"content\": \"Nova PR: ${{ github.event.pull_request.title }}\n de autoria: ${{ github.actor }}\n ${{ github.event.pull_request.html_url }}\"
+            \"content\": \"Update na repo: ${{ github.repository }}\n de autoria: ${{ github.actor }}\n ${{ github.event.pull_request.html_url }}\"
           }" \
           ${{ secrets.DISCORD_WEBHOOK }}
