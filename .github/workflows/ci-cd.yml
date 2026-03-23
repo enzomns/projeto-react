@@ -45,6 +45,9 @@ jobs:
     needs: deliver
 
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+        
       - name: Discord Notification
         uses: tenzin1308/discord-notification@v1.0.0
         with:
