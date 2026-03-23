@@ -38,3 +38,15 @@ jobs:
         with:
           name: projeto-react.zip
           path: .
+
+
+  discord:
+    runs-on: ubuntu-latest
+    needs: deliver
+
+    steps:
+      - name: Discord Notification
+        uses: tenzin1308/discord-notification@v1.0.0
+        with:
+          github-repo-name: ${{ github.repository_name }}
+          discord-webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
