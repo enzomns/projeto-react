@@ -53,5 +53,6 @@ jobs:
           curl -H "Content-Type: application/json" \
           -X POST \
           -d "{
-            \"content\": \"Update na repo: ${{ github.repository }}\n de autoria: ${{ github.actor }}\
+            \"content\": \"Update na repo: ${{ github.repository }}\n de autoria: ${{ github.actor }}
+          }" \
           ${{ secrets.DISCORD_WEBHOOK }}
